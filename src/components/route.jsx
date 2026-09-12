@@ -1,0 +1,21 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+import '../style/home.css'
+
+const Url = () => {
+  return (
+    <div className='url-con'>
+      <Link to='/mvp'>MVP</Link>
+      <Link to='/service'>Services</Link>
+      <Link to="/about">About</Link>
+      <Link to="/Project">Project</Link>
+      <Link to="/caseStudy">CaseStudy</Link>
+      <Link to="/uiux">Uiux</Link>
+      <Link to="/admin">Admin</Link>
+      <Link to="/blog">Blog</Link>
+      <Link to="/blogd">Blog Details</Link>
+    </div>
+  )
+}
+
+export default Url
