@@ -119,6 +119,7 @@ export const mapCaseStudy = (data, project) => {
     about,
     aboutImages: toImages(asArray(data.aboutProject?.images).slice(0, 3), title),
     experienceUrl: safeUrl(data.aboutProject?.experienceLink, { allowData: false }),
+    showExperience: data.aboutProject?.hideExperience !== true,
     process: resolveProcess(data.process, template),
     concepts: [
       toImages(asArray(data.conceptSlides).slice(0, 5), `${title} concept`),

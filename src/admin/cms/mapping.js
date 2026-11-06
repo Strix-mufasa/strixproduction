@@ -162,6 +162,7 @@ export const projectToEditor = (project, caseStudy) => {
     about: asString(c.aboutProject?.description),
     aboutImages: images(c.aboutProject?.images, LIMITS.aboutImages),
     experienceUrl: asString(c.aboutProject?.experienceLink),
+    showExperience: c.aboutProject?.hideExperience !== true,
     concepts: [images(slides.slice(0, LIMITS.conceptsFirst), LIMITS.conceptsFirst), images(slides.slice(LIMITS.conceptsFirst, CONCEPT_SLOTS), LIMITS.conceptsSecond)],
     responsiveImages: images(c.responsiveImages, LIMITS.responsiveImages),
     designSystem: { image: asString(c.designSystemImage) },
@@ -222,6 +223,8 @@ export const caseStudySections = (data, { includeTemplate = false } = {}) => {
       aboutProject: {
         description: asString(data.about),
         experienceLink: asString(data.experienceUrl).trim(),
+        // Stored only when hidden, so existing records keep showing the button.
+        ...(data.showExperience === false ? { hideExperience: true } : {}),
         images: imageSources(data.aboutImages, LIMITS.aboutImages),
       },
     },
