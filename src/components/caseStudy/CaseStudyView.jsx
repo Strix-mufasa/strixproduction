@@ -699,6 +699,7 @@ const CaseStudyView = ({ record, nextHref, canonical }) => {
               )}
             </div>
           ) : null}
+          {record.showExperience !== false ? (
           <SectionLink className="case-experience" href={experience}>
             <img className="case-experience__rim" src={art('3e10a.svg')} alt="" aria-hidden="true" />
             <span className="case-experience__mask" aria-hidden="true">
@@ -711,6 +712,7 @@ const CaseStudyView = ({ record, nextHref, canonical }) => {
               </span>
             </span>
           </SectionLink>
+          ) : null}
         </section>
 
         <div className="case-middle">
